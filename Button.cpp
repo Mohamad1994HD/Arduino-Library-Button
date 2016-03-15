@@ -15,52 +15,6 @@
 // Constructor /////////////////////////////////////////////////////////////////
 // Function that handles the creation and setup of instances
 
-//------------------------------------------------------ Using Arduino Pin Num
-Button::Button(int myPin, bool myMode)
-{
-    // initialize this instance's variables
-    this->_myPin = myPin;
-    
-    pinMode(this->_myPin, INPUT);
-    
-    this->_type = 0;
-    this->_myBit = this->_myPin;
-    this->_mode = myMode;
-    
-    this->_registerValue = 0;
-    
-    this->_lastState = 0;
-    this->_currentState = 0;
-    
-    this-> _debounced = 1;
-    this-> _lastDebouncedState = 0;
-    this-> _currentDebouncedState  = 0;
-    this-> _debounceTimerStartTime = 0;
-    this-> _debounceDelay = 30;
-    
-    this-> _pressed = 0;
-    this-> _released = 1;
-  
-    this-> _changed = 0;
-    this-> _justPressed = 0;
-    this-> _justReleased = 0;
-    this-> _pressCount = 0;
-    this-> _releaseCount = 0;
-    
-    this-> _doubleClickDelay = 400; 
-    this-> _holdDelay = 1500; 
-    
-    this-> _pToggleFlag = 0; //starts in off
-    this-> _rToggleFlag = 1; //starts in off
-    
-    this-> _lastPressTime = 0;
-    this-> _currentPressTime = 0;
-    this-> _lastReleaseTime = 0;
-    this-> _currentReleaseTime = 0;
-    
-  
-}
-
 //----------------------------------------------------------------- Using Byte
 Button::Button(int myBit, bool myMode, unsigned char *myRegister)
 {
